@@ -6,7 +6,7 @@ metadata:
   labels:
     type: vessel-srv
   annotations:
-     service.alpha.kubernetes.io/app-protocols: '{"http2-service":"HTTP2", "http-service": "HTTP"}'
+     service.alpha.kubernetes.io/app-protocols: '{"http2-service":"HTTP2", "http2-healthcheck": "HTTP2"}'
 spec:
   type: NodePort
   ports:
@@ -17,6 +17,6 @@ spec:
   - port: 9000
     protocol: TCP
     targetPort: 9000
-    name: http-service
+    name: http2-healthcheck
   selector:
     app: vessel

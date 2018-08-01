@@ -16,6 +16,16 @@ spec:
         - name: vessel
           image: gcr.io/gcptraining-17042017/python-grpc-microservice/vessel:go-http2
           imagePullPolicy: Always
+          livelinessProbe:
+            httpGet:
+              path: /
+              port: 9000
+              schems: HTTPS
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 9000
+              schems: HTTPS
           ports:
           - containerPort: 50052
             protocol: TCP
