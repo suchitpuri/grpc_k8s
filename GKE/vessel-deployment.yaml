@@ -6,7 +6,7 @@ metadata:
   labels:
     app: vessel
 spec:
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:
@@ -16,16 +16,16 @@ spec:
         - name: vessel
           image: gcr.io/gcptraining-17042017/python-grpc-microservice/vessel:go-http2
           imagePullPolicy: Always
-          livelinessProbe:
+          livenessProbe:
             httpGet:
               path: /
               port: 9000
-              schems: HTTPS
+              scheme: HTTPS
           readinessProbe:
             httpGet:
               path: /
               port: 9000
-              schems: HTTPS
+              scheme: HTTPS
           ports:
           - containerPort: 50052
             protocol: TCP
