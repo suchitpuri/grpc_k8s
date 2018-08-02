@@ -11,4 +11,4 @@ spec:
     secretName: shippy-secret
   backend:
     serviceName: vessel
-    servicePort: 50052
+    servicePort: 443

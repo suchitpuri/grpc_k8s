@@ -27,7 +27,7 @@ spec:
               port: 9000
               scheme: HTTPS
           ports:
-          - containerPort: 50052
+          - containerPort: 443
             protocol: TCP
             name: vessel-port
           - containerPort: 9000

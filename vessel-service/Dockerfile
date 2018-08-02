@@ -17,7 +17,7 @@ WORKDIR /opt/
 COPY --from=0 /go/http2_server .
 copy . . 
 
-EXPOSE 50052
+EXPOSE 443
 EXPOSE 9000
 
 ENTRYPOINT ["/bin/bash","run.sh"]
