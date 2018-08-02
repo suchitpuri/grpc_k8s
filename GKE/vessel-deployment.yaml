@@ -14,18 +14,18 @@ spec:
     spec:
         containers:
         - name: vessel
-          image: gcr.io/gcptraining-17042017/python-grpc-microservice/vessel:go-http2
+          image: gcr.io/pso-suchit/vessel-service:ssl
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
               path: /
-              port: 9000
-              scheme: HTTPS
+              port: 8000
+              scheme: HTTP
           readinessProbe:
             httpGet:
               path: /
-              port: 9000
-              scheme: HTTPS
+              port: 8000
+              scheme: HTTP
           ports:
           - containerPort: 443
             protocol: TCP
@@ -33,3 +33,6 @@ spec:
           - containerPort: 9000
             protocol: TCP
             name: vheal-port
+          - containerPort: 8000
+            protocol: TCP
+            name: health-port

@@ -19,6 +19,7 @@ copy . .
 
 EXPOSE 443
 EXPOSE 9000
+EXPOSE 8000
 
 ENTRYPOINT ["/bin/bash","run.sh"]
 
